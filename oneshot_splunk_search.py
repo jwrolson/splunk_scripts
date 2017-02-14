@@ -4,12 +4,12 @@ import splunklib.results as results
 
 # Create dict for splunk configs
 config = {}
-config['host'] = "10.206.36.185"
-config['port'] = 8089
-config['username'] = ''
-config['password'] = ''
-config['owner'] = "nobody"
-config['app'] = "gi_entapps_em_web"
+config['host'] = ""
+config['port'] = ""
+config['username'] = ""
+config['password'] = ""
+config['owner'] = ""
+config['app'] = ""
 config['autologin'] = True
 
 # Create service for interacting with Splunk search heads
@@ -31,7 +31,7 @@ kwargs_oneshot['latest_time'] = dt.datetime.strftime(current_time, '%Y-%m-%dT%H:
 kwargs_oneshot['earliest_time'] = dt.datetime.strftime(minus_5m_time, '%Y-%m-%dT%H:%M:%S%Z')
 
 # Search query stanza
-searchquery_oneshot = "search index=appdev | head 10"
+searchquery_oneshot = "search * | head 10"
 
 # Dispatch and wait for search to complete
 oneshotsearch_results = service.jobs.oneshot(searchquery_oneshot, **kwargs_oneshot)
