@@ -1,7 +1,7 @@
 import splunklib.client as client
 import json
 # Set variables 
-HOST = "10.206.36.185" # Splunk Stage
+HOST = ""
 PORT = 8089 # Default Splunk port
 USERNAME = "" # Splunk username
 PASSWORD = "" # Splunk password
